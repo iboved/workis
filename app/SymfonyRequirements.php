@@ -543,7 +543,7 @@ class SymfonyRequirements extends RequirementCollection
         /* optional recommendations follow */
 
         $this->addRecommendation(
-            file_get_contents(__FILE__) === file_get_contents(__DIR__.'/../vendor/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/skeleton/app/SymfonyRequirements.php'),
+            file_get_contents(__FILE__) === file_get_contents($this->getComposerVendorDir().'/sensio/distribution-bundle/Sensio/Bundle/DistributionBundle/Resources/skeleton/app/SymfonyRequirements.php'),
             'Requirements file should be up-to-date',
             'Your requirements file is outdated. Run composer install and re-check your configuration.'
         );
