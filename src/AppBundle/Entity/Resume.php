@@ -7,11 +7,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Table(name="job")
+ * @ORM\Table(name="resume")
  * @ORM\Entity
  * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false)
  */
-class Job
+class Resume
 {
     /**
      * @ORM\Column(name="id", type="integer")
@@ -21,28 +21,33 @@ class Job
     private $id;
 
     /**
-     * @ORM\Column(name="title", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
      * @Assert\NotBlank()
      */
-    private $title;
+    private $name;
 
     /**
-     * @ORM\Column(name="company", type="string", length=255)
+     * @ORM\Column(name="birthday", type="datetime")
      * @Assert\NotBlank()
      */
-    private $company;
+    private $birthday;
+
+    /**
+     * @ORM\Column(name="profession", type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    private $profession;
+
+    /**
+     * @ORM\Column(name="category", type="string", length=255)
+     */
+    private $category;
 
     /**
      * @ORM\Column(name="city", type="string", length=255)
      * @Assert\NotBlank()
      */
     private $city;
-
-    /**
-     * @ORM\Column(name="salary", type="integer")
-     * @Assert\NotBlank()
-     */
-    private $salary;
 
     /**
      * @ORM\Column(name="employment", type="string", length=255)
@@ -57,23 +62,26 @@ class Job
     private $experience;
 
     /**
-     * @ORM\Column(name="category", type="string", length=255)
-     */
-    private $category;
-
-    /**
-     * @ORM\Column(name="description", type="text")
+     * @ORM\Column(name="education", type="string", length=255)
      * @Assert\NotBlank()
      */
-    private $description;
+    private $education;
 
     /**
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="skills", type="text")
+     * @Assert\NotBlank()
      */
-    private $name;
+    private $skills;
+
+    /**
+     * @ORM\Column(name="email", type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    private $email;
 
     /**
      * @ORM\Column(name="phone", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $phone;
 
@@ -111,56 +119,102 @@ class Job
     }
 
     /**
-     * Set title
+     * Set name
      *
-     * @param string $title
-     * @return Job
+     * @param string $name
+     * @return Resume
      */
-    public function setTitle($title)
+    public function setName($name)
     {
-        $this->title = $title;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get title
+     * Get name
      *
      * @return string 
      */
-    public function getTitle()
+    public function getName()
     {
-        return $this->title;
+        return $this->name;
     }
 
     /**
-     * Set company
+     * Set birthday
      *
-     * @param string $company
-     * @return Job
+     * @param \DateTime $birthday
+     * @return Resume
      */
-    public function setCompany($company)
+    public function setBirthday($birthday)
     {
-        $this->company = $company;
+        $this->birthday = $birthday;
 
         return $this;
     }
 
     /**
-     * Get company
+     * Get birthday
+     *
+     * @return \DateTime 
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * Set profession
+     *
+     * @param string $profession
+     * @return Resume
+     */
+    public function setProfession($profession)
+    {
+        $this->profession = $profession;
+
+        return $this;
+    }
+
+    /**
+     * Get profession
      *
      * @return string 
      */
-    public function getCompany()
+    public function getProfession()
     {
-        return $this->company;
+        return $this->profession;
+    }
+
+    /**
+     * Set category
+     *
+     * @param string $category
+     * @return Resume
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * Get category
+     *
+     * @return string 
+     */
+    public function getCategory()
+    {
+        return $this->category;
     }
 
     /**
      * Set city
      *
      * @param string $city
-     * @return Job
+     * @return Resume
      */
     public function setCity($city)
     {
@@ -180,33 +234,10 @@ class Job
     }
 
     /**
-     * Set salary
-     *
-     * @param integer $salary
-     * @return Job
-     */
-    public function setSalary($salary)
-    {
-        $this->salary = $salary;
-
-        return $this;
-    }
-
-    /**
-     * Get salary
-     *
-     * @return integer 
-     */
-    public function getSalary()
-    {
-        return $this->salary;
-    }
-
-    /**
      * Set employment
      *
      * @param string $employment
-     * @return Job
+     * @return Resume
      */
     public function setEmployment($employment)
     {
@@ -229,7 +260,7 @@ class Job
      * Set experience
      *
      * @param integer $experience
-     * @return Job
+     * @return Resume
      */
     public function setExperience($experience)
     {
@@ -249,79 +280,79 @@ class Job
     }
 
     /**
-     * Set category
+     * Set education
      *
-     * @param string $category
-     * @return Job
+     * @param string $education
+     * @return Resume
      */
-    public function setCategory($category)
+    public function setEducation($education)
     {
-        $this->category = $category;
+        $this->education = $education;
 
         return $this;
     }
 
     /**
-     * Get category
+     * Get education
      *
      * @return string 
      */
-    public function getCategory()
+    public function getEducation()
     {
-        return $this->category;
+        return $this->education;
     }
 
     /**
-     * Set description
+     * Set skills
      *
-     * @param string $description
-     * @return Job
+     * @param string $skills
+     * @return Resume
      */
-    public function setDescription($description)
+    public function setSkills($skills)
     {
-        $this->description = $description;
+        $this->skills = $skills;
 
         return $this;
     }
 
     /**
-     * Get description
+     * Get skills
      *
      * @return string 
      */
-    public function getDescription()
+    public function getSkills()
     {
-        return $this->description;
+        return $this->skills;
     }
 
     /**
-     * Set name
+     * Set email
      *
-     * @param string $name
-     * @return Job
+     * @param string $email
+     * @return Resume
      */
-    public function setName($name)
+    public function setEmail($email)
     {
-        $this->name = $name;
+        $this->email = $email;
 
         return $this;
     }
 
     /**
-     * Get name
+     * Get email
      *
      * @return string 
      */
-    public function getName()
+    public function getEmail()
     {
-        return $this->name;
+        return $this->email;
     }
 
     /**
      * Set phone
      *
      * @param string $phone
-     * @return Job
+     * @return Resume
      */
     public function setPhone($phone)
     {
@@ -344,7 +375,7 @@ class Job
      * Set createdAt
      *
      * @param \DateTime $createdAt
-     * @return Job
+     * @return Resume
      */
     public function setCreatedAt($createdAt)
     {
@@ -367,7 +398,7 @@ class Job
      * Set updatedAt
      *
      * @param \DateTime $updatedAt
-     * @return Job
+     * @return Resume
      */
     public function setUpdatedAt($updatedAt)
     {
@@ -390,7 +421,7 @@ class Job
      * Set deletedAt
      *
      * @param \DateTime $deletedAt
-     * @return Job
+     * @return Resume
      */
     public function setDeletedAt($deletedAt)
     {
@@ -413,7 +444,7 @@ class Job
      * Set slug
      *
      * @param string $slug
-     * @return Job
+     * @return Resume
      */
     public function setSlug($slug)
     {
