@@ -96,12 +96,6 @@ class Job
     private $deletedAt;
 
     /**
-     * @ORM\Column(name="slug", type="string", length=255)
-     * @Gedmo\Slug(fields={"id"})
-     */
-    private $slug;
-
-    /**
      * Get id
      *
      * @return integer 
@@ -385,29 +379,6 @@ class Job
     public function getDeletedAt()
     {
         return $this->deletedAt;
-    }
-
-    /**
-     * Set slug
-     *
-     * @param string $slug
-     * @return Job
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string 
-     */
-    public function getSlug()
-    {
-        return $this->slug;
     }
 
     /**

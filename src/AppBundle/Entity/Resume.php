@@ -33,10 +33,10 @@ class Resume
     private $birthday;
 
     /**
-     * @ORM\Column(name="profession", type="string", length=255)
+     * @ORM\Column(name="job_title", type="string", length=255)
      * @Assert\NotBlank()
      */
-    private $profession;
+    private $job_title;
 
     /**
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="resumes", cascade={"persist"})
@@ -51,10 +51,10 @@ class Resume
     private $city;
 
     /**
-     * @ORM\Column(name="employment", type="string", length=255)
+     * @ORM\Column(name="education", type="string", length=255)
      * @Assert\NotBlank()
      */
-    private $employment;
+    private $education;
 
     /**
      * @ORM\Column(name="experience", type="integer")
@@ -63,10 +63,10 @@ class Resume
     private $experience;
 
     /**
-     * @ORM\Column(name="education", type="string", length=255)
+     * @ORM\Column(name="employment", type="string", length=255)
      * @Assert\NotBlank()
      */
-    private $education;
+    private $employment;
 
     /**
      * @ORM\Column(name="skills", type="text")
@@ -102,12 +102,6 @@ class Resume
      * @ORM\Column(name="deleted_at", type="datetime", nullable=true)
      */
     private $deletedAt;
-
-    /**
-     * @ORM\Column(name="slug", type="string", length=255)
-     * @Gedmo\Slug(fields={"id"})
-     */
-    private $slug;
 
     /**
      * Get id
@@ -166,26 +160,26 @@ class Resume
     }
 
     /**
-     * Set profession
+     * Set job_title
      *
-     * @param string $profession
+     * @param string $jobTitle
      * @return Resume
      */
-    public function setProfession($profession)
+    public function setJobTitle($jobTitle)
     {
-        $this->profession = $profession;
+        $this->job_title = $jobTitle;
 
         return $this;
     }
 
     /**
-     * Get profession
+     * Get job_title
      *
      * @return string 
      */
-    public function getProfession()
+    public function getJobTitle()
     {
-        return $this->profession;
+        return $this->job_title;
     }
 
     /**
@@ -212,26 +206,26 @@ class Resume
     }
 
     /**
-     * Set employment
+     * Set education
      *
-     * @param string $employment
+     * @param string $education
      * @return Resume
      */
-    public function setEmployment($employment)
+    public function setEducation($education)
     {
-        $this->employment = $employment;
+        $this->education = $education;
 
         return $this;
     }
 
     /**
-     * Get employment
+     * Get education
      *
      * @return string 
      */
-    public function getEmployment()
+    public function getEducation()
     {
-        return $this->employment;
+        return $this->education;
     }
 
     /**
@@ -258,26 +252,26 @@ class Resume
     }
 
     /**
-     * Set education
+     * Set employment
      *
-     * @param string $education
+     * @param string $employment
      * @return Resume
      */
-    public function setEducation($education)
+    public function setEmployment($employment)
     {
-        $this->education = $education;
+        $this->employment = $employment;
 
         return $this;
     }
 
     /**
-     * Get education
+     * Get employment
      *
      * @return string 
      */
-    public function getEducation()
+    public function getEmployment()
     {
-        return $this->education;
+        return $this->employment;
     }
 
     /**
@@ -416,29 +410,6 @@ class Resume
     public function getDeletedAt()
     {
         return $this->deletedAt;
-    }
-
-    /**
-     * Set slug
-     *
-     * @param string $slug
-     * @return Resume
-     */
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
-
-    /**
-     * Get slug
-     *
-     * @return string 
-     */
-    public function getSlug()
-    {
-        return $this->slug;
     }
 
     /**

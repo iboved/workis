@@ -37,7 +37,7 @@ class Category
     private $resumes;
 
     /**
-     * @ORM\Column(name="slug", type="title", length=255)
+     * @ORM\Column(name="slug", type="string", length=255)
      * @Gedmo\Slug(fields={"title"})
      */
     private $slug;
@@ -84,10 +84,10 @@ class Category
     /**
      * Set slug
      *
-     * @param \title $slug
+     * @param string $slug
      * @return Category
      */
-    public function setSlug(\title $slug)
+    public function setSlug($slug)
     {
         $this->slug = $slug;
 
@@ -97,7 +97,7 @@ class Category
     /**
      * Get slug
      *
-     * @return \title 
+     * @return string 
      */
     public function getSlug()
     {
