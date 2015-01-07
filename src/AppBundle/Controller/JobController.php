@@ -8,15 +8,33 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+/**
+ * @Route("/jobs")
+ */
 class JobController extends Controller
 {
+    /**
+     * This method render all jobs
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     *
+     * @Route("/")
+     * @Method({"GET"})
+     */
+    public function listAction()
+    {
+        $jobs = $this->getDoctrine()->getManager()->getRepository('AppBundle:Job')->findAll();
+
+        return $this->render('job/list.html.twig', ['jobs' => $jobs]);
+    }
+
     /**
      * This method render one job
      *
      * @param Job $job
      * @return \Symfony\Component\HttpFoundation\Response
      *
-     * @Route("/jobs/{id}")
+     * @Route("/{id}")
      * @Method({"GET"})
      */
     public function viewAction(Job $job)
@@ -30,7 +48,7 @@ class JobController extends Controller
      * @param Job $job
      * @return \Symfony\Component\HttpFoundation\Response|static
      *
-     * @Route("/jobs/{id}/delete")
+     * @Route("/{id}/delete")
      * @Method({"DELETE"})
      */
     public function deleteAction(Job $job)
