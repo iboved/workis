@@ -5,25 +5,30 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Job;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-/**
- * @Route("/jobs")
- */
 class JobController extends Controller
 {
     /**
-     * This method render all jobs
+     * This method render all jobs or jobs filtered by city
      *
+     * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
      *
-     * @Route("/")
+     * @Route("/jobs")
      * @Method({"GET"})
      */
-    public function listAction()
+    public function listAction(Request $request)
     {
-        $jobs = $this->getDoctrine()->getManager()->getRepository('AppBundle:Job')->findAll();
+        $city = $request->query->get('city');
+
+        if (is_null($city)) {
+            $jobs = $this->getDoctrine()->getRepository('AppBundle:Job')->findAll();
+        } else {
+            $jobs = $this->getDoctrine()->getRepository('AppBundle:Job')->findBy(['city' => $city]);
+        }
 
         return $this->render('job/list.html.twig', ['jobs' => $jobs]);
     }
@@ -34,7 +39,7 @@ class JobController extends Controller
      * @param Job $job
      * @return \Symfony\Component\HttpFoundation\Response
      *
-     * @Route("/{id}")
+     * @Route("/jobs/{id}")
      * @Method({"GET"})
      */
     public function viewAction(Job $job)
@@ -48,7 +53,7 @@ class JobController extends Controller
      * @param Job $job
      * @return \Symfony\Component\HttpFoundation\Response|static
      *
-     * @Route("/{id}/delete")
+     * @Route("/jobs/{id}/delete")
      * @Method({"DELETE"})
      */
     public function deleteAction(Job $job)
