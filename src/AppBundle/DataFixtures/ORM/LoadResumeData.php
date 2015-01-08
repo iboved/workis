@@ -21,7 +21,7 @@ class LoadResumeData extends AbstractFixture implements OrderedFixtureInterface
         $resumeIT->setCategory($this->getReference('it-category'));
         $resumeIT->setCity('Lviv');
         $resumeIT->setEmployment('Full employment');
-        $resumeIT->setExperience(1100);
+        $resumeIT->setExperience(2);
         $resumeIT->setEducation('Higher education');
         $resumeIT->setSkills('Object Oriented PHP Developer (PHP5). PHP (5, 4 and 3), MySQL, XHTML / HTML, JavaScript, CSS, Symfony Framework, PEAR, Smarty Template Engine, GIT Version Control, Subversion Version Control (user and Admin), CVS (concurrent Versioning System), MVC (Model View Controller).');
         $resumeIT->setEmail('durov@vk.com');
@@ -38,7 +38,7 @@ class LoadResumeData extends AbstractFixture implements OrderedFixtureInterface
         $resumeArt->setCategory($this->getReference('art-category'));
         $resumeArt->setCity('Odesa');
         $resumeArt->setEmployment('Part-time');
-        $resumeArt->setExperience(850);
+        $resumeArt->setExperience(1);
         $resumeArt->setEducation('Secondary school');
         $resumeArt->setSkills('Well versed with Visualizing & designing, Adobe Photoshop, Adobe Illustrator & CorelDraw etc. Good at handling multi-level tasks from small ads to thematically brochures and visual merchandising. Adept at analyzing clients requirement & providing innovative ideas of advertising & promotion. Effective at interpersonal communication & relationship building with team and Clientele.');
         $resumeArt->setEmail('frolova@gmail.com');

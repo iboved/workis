@@ -10,6 +10,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @ORM\Table(name="category")
  * @ORM\Entity
+ * @Gedmo\SoftDeleteable(fieldName="deletedAt", timeAware=false)
  */
 class Category
 {
@@ -27,12 +28,12 @@ class Category
     private $title;
 
     /**
-     * @ORM\OneToMany(targetEntity="Job", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="Job", mappedBy="category", cascade={"remove"})
      */
     private $jobs;
 
     /**
-     * @ORM\OneToMany(targetEntity="Resume", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="Resume", mappedBy="category", cascade={"remove"})
      */
     private $resumes;
 
@@ -41,6 +42,11 @@ class Category
      * @Gedmo\Slug(fields={"title"})
      */
     private $slug;
+
+    /**
+     * @ORM\Column(name="deleted_at", type="datetime", nullable=true)
+     */
+    private $deletedAt;
 
     public function __construct()
     {
@@ -168,5 +174,28 @@ class Category
     public function getResumes()
     {
         return $this->resumes;
+    }
+
+    /**
+     * Set deletedAt
+     *
+     * @param \DateTime $deletedAt
+     * @return Category
+     */
+    public function setDeletedAt($deletedAt)
+    {
+        $this->deletedAt = $deletedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get deletedAt
+     *
+     * @return \DateTime
+     */
+    public function getDeletedAt()
+    {
+        return $this->deletedAt;
     }
 }
