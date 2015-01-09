@@ -1,0 +1,111 @@
+navbar:
+    home: Home
+    jobs: Jobs
+    resumes: Resumes
+    actions: Actions
+    add_job: Add job
+    add_resume: Add resume
+    add_category: Add category
+    languages: Languages
+
+title:
+    home: Welcome | WorkIS
+    jobs: Jobs
+    resumes: Resumes
+    new_job: New job
+    new_resume: New resume
+    new_category: New category
+    edit_job: Edit job
+    edit_resume: Edit resume
+    edit_category: Edit category
+
+job:
+    summary: Summary
+    description: Job description
+    salary: Salary
+    company: Company
+    city: City
+    employment: Employment type
+    experience: Work experience
+    education: Education
+    contact: Contact information
+    name: Name
+    phone: Phone
+    created: Created
+    new:
+        new_job: Ceate new job
+        edit_job: Edit job
+        title: Enter the job title
+        company: Enter the company name
+        city: Enter the city
+        salary: Enter the salary ($)
+        employment: Choose the employment
+        full_employment: Full employment
+        part_time: Part-time
+        distant_work: Distant work
+        education: Choose the education
+        higher: Higher
+        incomplete_higher: Incomplete higher
+        secondary_special: Secondary special
+        secondary: Secondary
+        experience: Enter the experience
+        category: Choose the category of job
+        description: Enter the description
+        name: Enter your name
+        phone: Enter your phone
+
+resume:
+    summary: Summary
+    skills: Skills
+    name: Name
+    city: City
+    education: Education
+    experience: Work experience
+    employment: Employment type
+    contact: Contact information
+    phone: Phone
+    created: Created
+    new:
+        new_resume: Create new resume
+        edit_resume: Edit resume
+        name: Enter your name
+        birthday: Enter your birthday
+        city: Enter your city
+        job_title: Enter the job title
+        category: Choose the category of resume
+        education: Choose the education
+        higher: Higher
+        incomplete_higher: Incomplete higher
+        secondary_special: Secondary special
+        secondary: Secondary
+        experience: Enter your experience
+        employment: Choose the employment
+        full_employment: Full employment
+        part_time: Part-time
+        distant_work: Distant work
+        skills: Enter your skills
+        email: Enter your Email
+        phone: Enter your phone
+
+category:
+    new_category: Create new category
+    edit_category: Edit category
+    title: Enter the category title
+    jobs: Jobs
+    resumes: Resumes
+
+button:
+    save: Save
+    view_details: View details
+
+jumbotron:
+    title: Welcome!
+    description: This site helps you find the job that's right for you. Use our resources to create resume, search relevant employment opportunities in your area and launch your career.
+
+Full employment: Full employment
+Part-time: Part-time
+Distant work: Distant work
+Higher: Higher
+Incomplete higher: Incomplete higher
+Secondary special: Secondary special
+Secondary: Secondary

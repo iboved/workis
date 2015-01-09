@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block title %} {{ 'title.edit_category'|trans }} {% endblock %}
+
+{% block container %}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    <legend>{{ 'category.edit_category'|trans }}</legend>
+    {{ form_row(form.title) }}
+
+    {{ form_end(form) }}
+{% endblock %}

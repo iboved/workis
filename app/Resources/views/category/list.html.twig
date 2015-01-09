@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+        <style>
+            .row DIV .col-xs-12:hover {
+                background-color: #f5f5f5;
+            }
+        </style>
+    {% endblock %}
+{% block container %}
+    <div class="col-xs-12 col-sm-12">
+        <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+    <table class="table" style="table-layout: fixed">
+        <thead>
+        <tr>
+            <th><p class="text-primary" align="center" style="font-size: x-large">{{ 'category.jobs'|trans }}</p></th>
+            <th><p class="text-primary" align="center" style="font-size: x-large">{{ 'category.resumes'|trans }}</p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                {% for job in jobs %}
+                    <div class="row">
+                        <div class="col-xs-12 col-lg-12">
+                            {% include 'partials_name/job.html.twig' %}
+                        </div><!--/.col-xs-12.col-lg-12-->
+                     </div><!--/row-->
+                {% endfor %}
+            </td>
+            <td>
+                {% for resume in resumes %}
+                    <div class="row">
+                        <div class="col-xs-12 col-lg-12">
+                            {% include 'partials_name/resume.html.twig' %}
+                        </div><!--/.col-xs-12.col-lg-12-->
+                    </div><!--/row-->
+                {% endfor %}
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </div><!--/.col-xs-12.col-sm-12-->
+{% endblock %}

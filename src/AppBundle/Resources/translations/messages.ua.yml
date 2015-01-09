@@ -1,0 +1,111 @@
+navbar:
+    home: Домашня
+    jobs: Вакансії
+    resumes: Резюме
+    actions: Дії
+    add_job: Додати вакансію
+    add_resume: Додати резюме
+    add_category: Додати категорію
+    languages: Мови
+
+title:
+    home: Ласкаво просимо | WorkIS
+    jobs: Вакансії
+    resumes: Резюме
+    new_job: Нова вакансія
+    new_resume: Нове резюме
+    new_category: Нова категорія
+    edit_job: Редагування вакансії
+    edit_resume: Редагування резюме
+    edit_category: Редагування категорії
+
+job:
+    summary: Короткий виклад
+    description: Опис вакансії
+    salary: Зарплата
+    company: Компанія
+    city: Місто
+    employment: Вид зайнятості
+    experience: Досвід работи
+    education: Освіта
+    contact: Контактна інформація
+    name: ПІБ
+    phone: Телефон
+    created: Дата створення
+    new:
+        new_job: Створення нової вакансії
+        edit_job: Редагування вакансії
+        title: Введіть посаду
+        company: Введіть назву компанії
+        city: Введіть місто
+        salary: Введіть зарплату ($)
+        employment: Виберіть вид зайнятості
+        full_employment: Повна зайнятість
+        part_time: Неповна зайнятість
+        distant_work: Дистанційна работа
+        education: Виберіть освіту
+        higher: Вища
+        incomplete_higher: Незакінчена вища
+        secondary_special: Середня спеціальна
+        secondary: Середня
+        experience: Введіть досвід роботи
+        category: Виберіть категорію
+        description: Введіть опис
+        name: Введіть своє ПІБ
+        phone: Введіть свій телефон
+
+resume:
+    summary: Короткий виклад
+    skills: Навички
+    name: ПІБ
+    city: Місто
+    education: Освіта
+    experience: Досвід роботи
+    employment: Вид зайнятості
+    contact: Контактна інформація
+    phone: Телефон
+    created: Дата створення
+    new:
+        new_resume: Створення нового резюме
+        edit_resume: Редагування резюме
+        name: Введіть своє ПІБ
+        birthday: Введіть свій День народження
+        city: Введіть своє місто
+        job_title: Введіть свою посаду
+        category: Виберіть категорію
+        education: Виберіть свою освіту
+        higher: Вища
+        incomplete_higher: Незакінчена вища
+        secondary_special: Середня спеціальна
+        secondary: Середня
+        experience: Введіть свій досвід роботи
+        employment: Виберіть вид зайнятості
+        full_employment: Повна зайнятість
+        part_time: Неповна зайнятість
+        distant_work: Дистанційна робота
+        skills: Опишіть свої навички
+        email: Введіть свій Email
+        phone: Введіть свій телефон
+
+category:
+    new_category: Створення нової категорії
+    edit_category: Редагування категорії
+    title: Введіть назву категорії
+    jobs: Вакансії
+    resumes: Резюме
+
+button:
+    save: Зберегти
+    view_details: Докладніше
+
+jumbotron:
+    title: Ласкаво просимо!
+    description: Даний сайт допоможе вам знайти работу, яка підходить саме для вас. Використовуйте наші ресурси для створення резюме та пошуку відповідних можливостей для працевлаштування у вашому регіоні.
+
+Full employment: Повна зайнятість
+Part-time: Неповна зайнятість
+Distant work: Дистанційна робота
+Higher: Вища
+Incomplete higher: Незакінчена вища
+Secondary special: Середня спеціальна
+Secondary: Середня

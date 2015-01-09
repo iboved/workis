@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block title %} {{ 'title.edit_resume'|trans }} {% endblock %}
+
+{% block container %}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    <legend>{{ 'resume.new.edit_resume'|trans }}</legend>
+    {{ form_row(form.name) }}
+    {{ form_row(form.birthday) }}
+    {{ form_row(form.city) }}
+    {{ form_row(form.job_title) }}
+    {{ form_row(form.category) }}
+    {{ form_row(form.education) }}
+    {{ form_row(form.experience) }}
+    {{ form_row(form.employment) }}
+    {{ form_row(form.skills) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.phone) }}
+
+    {{ form_end(form) }}
+{% endblock %}
