@@ -13,6 +13,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class CategoryController extends Controller
 {
     /**
+     * This method create new category
+     *
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
      * @Route("categories/new")
      * @Method({"GET","POST"})
      */
@@ -32,6 +37,32 @@ class CategoryController extends Controller
         }
 
         return $this->render('category/new.html.twig', ['form' =>  $form->createView()]);
+    }
+
+    /**
+     * This method edit category
+     *
+     * @param Request $request
+     * @param Category $category
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Route("/categories/{slug}/edit")
+     * @Method({"GET", "POST"})
+     */
+    public function editAction(Request $request, Category $category)
+    {
+        $form = $this->createForm(new CategoryType(), $category);
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $this->getDoctrine()->getManager()->persist($category);
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirect($this->generateUrl('app_default_index'));
+        }
+
+        return $this->render('category/edit.html.twig', ['form' =>  $form->createView()]);
     }
 
     /**

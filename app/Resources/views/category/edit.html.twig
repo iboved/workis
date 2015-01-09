@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Edit category{% endblock %}
+
+{% block container %}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+    <legend>Edit category</legend>
+    {{ form_row(form.title) }}
+
+    {{ form_end(form) }}
+{% endblock %}
