@@ -16,27 +16,22 @@
                 <div class="panel-body">
                     <div class="col-xs-6 col-lg-6">
                         <div class="panel panel-default">
-                            {#<div class="panel-heading">#}
-                            {#<p class="panel-title" style="font-size: large; text-align: center">Summary</p>#}
-                            {#</div>#}
-
-                            {#<div class="alert alert-info" role="alert" style="text-align: center; font-size: large">Summary</div>#}
                             <div class="panel-body">
-                                <p style="font-size: 20px; text-align: center">Summary</p>
+                                <p style="font-size: 20px; text-align: center">{{ 'resume.summary'|trans }}</p>
                                 <hr>
-                                <p style="font-size: 17px">Full name: {{ resume.name }} ({{ resume.birthday|date('d.m.Y') }})</p>
-                                <p style="font-size: 17px">City: {{ resume.city }}</p>
-                                <p style="font-size: 17px">Education: {{ resume.education }}</p>
-                                <p style="font-size: 17px">Work experience: {{ resume.experience }}</p>
-                                <p style="font-size: 17px">Employment Type: {{ resume.employment }}</p>
+                                <p style="font-size: 17px">{{ 'resume.name'|trans }}: {{ resume.name }} ({{ resume.birthday|date('d.m.Y') }})</p>
+                                <p style="font-size: 17px">{{ 'resume.city'|trans }}: {{ resume.city }}</p>
+                                <p style="font-size: 17px">{{ 'resume.education'|trans }}: {{ resume.education|trans }}</p>
+                                <p style="font-size: 17px">{{ 'resume.experience'|trans }}: {{ resume.experience }}</p>
+                                <p style="font-size: 17px">{{ 'resume.employment'|trans }}: {{ resume.employment|trans }}</p>
                                 <hr>
                                 <table class="table table-hover">
-                                    <caption>Contact information</caption>
+                                    <caption>{{ 'resume.contact'|trans }}</caption>
                                     <thead>
                                     <tr>
-                                        <th>Name</th>
+                                        <th>{{ 'resume.name'|trans }}</th>
                                         <th>Email</th>
-                                        <th>Phone</th>
+                                        <th>{{ 'resume.phone'|trans }}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -52,18 +47,15 @@
                     </div><!--/.col-xs-6 col-lg-6-->
                     <div class="col-xs-6 col-lg-6">
                         <div class="panel panel-default">
-                            {#<div class="panel-heading">#}
-                            {#<p class="panel-title" style="font-size: large; text-align: center">Job description</p>#}
-                            {#</div>#}
                             <div class="panel-body">
-                                <p style="font-size: 20px; text-align: center">Skills</p>
+                                <p style="font-size: 20px; text-align: center">{{ 'resume.skills'|trans }}</p>
                                 <hr>
                                 <p style="font-size: 17px">{{ resume.skills }}</p>
                             </div>
                         </div>
                     </div><!--/.col-xs-6 col-lg-6-->
                     <div class="pull-right">
-                        <p class="text-muted">Created: {{ resume.createdAt|date }}</p>
+                        <p class="text-muted">{{ 'resume.created'|trans }}: {{ resume.createdAt|date }}</p>
                     </div>
                 </div>
             </div>

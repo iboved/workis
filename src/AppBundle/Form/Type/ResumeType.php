@@ -11,32 +11,35 @@ class ResumeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('birthday', 'birthday')
-            ->add('city')
-            ->add('job_title')
+            ->add('name', null, ['label' => 'resume.new.name'])
+            ->add('birthday', 'birthday', ['label' => 'resume.new.birthday'])
+            ->add('city', null, ['label' => 'resume.new.city'])
+            ->add('job_title', null, ['label' => 'resume.new.job_title'])
             ->add('category', 'entity', [
                 'class' => 'AppBundle:Category',
-                'multiple' => false
+                'multiple' => false,
+                'label' => 'resume.new.category'
             ])
             ->add('education', 'choice', [
                 'choices' => [
-                    'Higher' => 'Higher',
-                    'Incomplete higher' => 'Incomplete higher',
-                    'Secondary special' => 'Secondary special',
-                    'Secondary' => 'Secondary']
+                    'Higher' => 'resume.new.higher',
+                    'Incomplete higher' => 'resume.new.incomplete_higher',
+                    'Secondary special' => 'resume.new.secondary_special',
+                    'Secondary' => 'resume.new.secondary'],
+                'label' => 'resume.new.education'
             ])
-            ->add('experience')
+            ->add('experience', null, ['label' => 'resume.new.experience'])
             ->add('employment', 'choice', [
                 'choices' => [
-                    'Full employment' => 'Full employment',
-                    'Part-time' => 'Part-time',
-                    'Distant work' => 'Distant work']
+                    'Full employment' => 'resume.new.full_employment',
+                    'Part-time' => 'resume.new.part_time',
+                    'Distant work' => 'resume.new.distant_work'],
+                'label' => 'resume.new.employment'
             ])
-            ->add('skills')
-            ->add('email', 'email')
-            ->add('phone')
-            ->add('save', 'submit');
+            ->add('skills', null, ['label' => 'resume.new.skills'])
+            ->add('email', 'email', ['label' => 'resume.new.email'])
+            ->add('phone', null, ['label' => 'resume.new.phone'])
+            ->add('save', 'submit', ['label' => 'button.save']);
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

@@ -1,12 +1,12 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Edit resume{% endblock %}
+{% block title %} {{ 'title.edit_resume'|trans }} {% endblock %}
 
 {% block container %}
     {{ form_start(form) }}
     {{ form_errors(form) }}
 
-    <legend>Edit resume</legend>
+    <legend>{{ 'resume.new.edit_resume'|trans }}</legend>
     {{ form_row(form.name) }}
     {{ form_row(form.birthday) }}
     {{ form_row(form.city) }}
