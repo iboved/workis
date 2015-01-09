@@ -1,31 +1,27 @@
 {% extends 'base.html.twig' %}
 
-    {% block stylesheets %}
-        {{ parent() }}
-        <style>
-            .row DIV .col-xs-12:hover {
-                background-color: #f5f5f5;
-            }
-        </style>
-    {% endblock %}
+{% block title %} {{ 'title.home'|trans }} {% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .row DIV .col-xs-12:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+{% endblock %}
 {% block container %}
     <div class="col-xs-12 col-sm-9">
         <p class="pull-right visible-xs">
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
         </p>
         <div class="jumbotron">
-            <h2>Welcome!</h2>
-            <p>This service helps you find the job that's right for you. Use our resources to create resume, search relevant employment opportunities in your area and launch your career.</p>
+            <h2>{{ 'jumbotron.title'|trans }}</h2>
+            <p>{{ 'jumbotron.description'|trans }}</p>
         </div>
         <div class="row">
             {% for job in jobs %}
                 <div class="col-xs-12 col-lg-12">
-                    <div class="pull-right text-muted" style="font-size: 22px">{{ job.salary|salary }}</div>
-                    <p class="text-primary" style="font-size: 27px"><a href="{{ path('app_job_view', {'id' : job.id}) }}">{{ job.title }}</a></p>
-                    <p>{{ job.company }} | <a href="{{ path('app_job_list') }}?city={{ job.city|lower }}">{{ job.city }}</a></p>
-                    <p>{{ job.employment }} | Experience: {{ job.experience }}</p>
-                    <p class="text-muted">{{ job.description|slice(0, 350) }}</p>
-                    <p><a class="btn btn-primary" href="{{ path('app_job_view', {'id' : job.id}) }}" role="button">View details &raquo;</a></p>
+                    {% include 'partials_name/job.html.twig' %}
                 </div><!--/.col-xs-12.col-lg-12-->
             {% endfor %}
         </div><!--/row-->

@@ -1,0 +1,7 @@
+<div class="pull-right" style="font-size: 19px"><a href="{{ path('app_resume_list') }}?city={{ resume.city|lower }}">{{ resume.city }}</a></div>
+<p class="text-primary" style="font-size: 27px"><a href="{{ path('app_resume_view', {'id': resume.id}) }}">{{ resume.jobTitle }}</a></p>
+<p><a href="{{ path('app_category_list', {'slug': resume.category.slug}) }}">{{ resume.category }}</a></p>
+<p>{{ 'resume.created'|trans }}: {{ resume.createdAt|date }} | {{ 'resume.education'|trans }}: {{ resume.education }}</p>
+<p>{{ resume.employment }} | {{ 'resume.experience'|trans }}: {{ resume.experience }}</p>
+<p class="text-muted">{{ resume.skills|slice(0, 350) }}</p>
+<p><a class="btn btn-primary" href="{{ path('app_resume_view', {'id': resume.id}) }}" role="button">{{ 'button.view_details'|trans }} &raquo;</a></p>

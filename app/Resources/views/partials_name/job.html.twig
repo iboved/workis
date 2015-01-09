@@ -1,0 +1,7 @@
+<div class="pull-right text-muted" style="font-size: 22px">{{ job.salary|salary }}</div>
+<p class="text-primary" style="font-size: 27px"><a href="{{ path('app_job_view', {'id' : job.id}) }}">{{ job.title }}</a></p>
+<p><a href="{{ path('app_category_list', {'slug': job.category.slug}) }}">{{ job.category }}</a></p>
+<p>{{ job.company }} | <a href="{{ path('app_job_list') }}?city={{ job.city|lower }}">{{ job.city }}</a></p>
+<p>{{ job.employment }} | {{ 'job.experience'|trans }}: {{ job.experience }}</p>
+<p class="text-muted">{{ job.description|slice(0, 350) }}</p>
+<p><a class="btn btn-primary" href="{{ path('app_job_view', {'id' : job.id}) }}" role="button">{{ 'button.view_details'|trans }} &raquo;</a></p>
