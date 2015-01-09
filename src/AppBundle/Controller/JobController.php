@@ -84,7 +84,7 @@ class JobController extends Controller
             return $this->redirect($this->generateUrl('app_default_index'));
         }
 
-        return $this->render('job/new.html.twig', ['form' =>  $form->createView()]);
+        return $this->render('job/edit.html.twig', ['form' =>  $form->createView()]);
     }
 
     /**
