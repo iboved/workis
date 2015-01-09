@@ -3,13 +3,37 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Category;
+use AppBundle\Form\Type\CategoryType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class CategoryController extends Controller
 {
+    /**
+     * @Route("categories/new")
+     * @Method({"GET","POST"})
+     */
+    public function newAction(Request $request)
+    {
+        $category = new Category();
+
+        $form = $this->createForm(new CategoryType(), $category);
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $this->getDoctrine()->getManager()->persist($category);
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirect($this->generateUrl('app_default_index'));
+        }
+
+        return $this->render('category/new.html.twig', ['form' =>  $form->createView()]);
+    }
+
     /**
      * This method render jobs and resumes with a certain category
      *
