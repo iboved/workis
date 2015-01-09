@@ -35,6 +35,11 @@ class ResumeController extends Controller
     }
 
     /**
+     * This method create new resume
+     *
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
      * @Route("/resumes/new")
      * @Method({"GET","POST"})
      */
@@ -54,6 +59,32 @@ class ResumeController extends Controller
         }
 
         return $this->render('resume/new.html.twig', ['form' =>  $form->createView()]);
+    }
+
+    /**
+     * This method edit resume
+     *
+     * @param Request $request
+     * @param Resume $resume
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Route("/resumes/{id}/edit")
+     * @Method({"GET", "POST"})
+     */
+    public function editAction(Request $request, Resume $resume)
+    {
+        $form = $this->createForm(new ResumeType(), $resume);
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $this->getDoctrine()->getManager()->persist($resume);
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirect($this->generateUrl('app_default_index'));
+        }
+
+        return $this->render('resume/edit.html.twig', ['form' =>  $form->createView()]);
     }
 
     /**
