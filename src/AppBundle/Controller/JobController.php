@@ -62,6 +62,32 @@ class JobController extends Controller
     }
 
     /**
+     * This method edit job
+     *
+     * @param Request $request
+     * @param Job $job
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     *
+     * @Route("/jobs/{id}/edit")
+     * @Method({"GET", "POST"})
+     */
+    public function editAction(Request $request, Job $job)
+    {
+        $form = $this->createForm(new JobType(), $job);
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $this->getDoctrine()->getManager()->persist($job);
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirect($this->generateUrl('app_default_index'));
+        }
+
+        return $this->render('job/new.html.twig', ['form' =>  $form->createView()]);
+    }
+
+    /**
      * This method render one job
      *
      * @param Job $job
