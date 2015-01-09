@@ -1,0 +1,111 @@
+navbar:
+    home: Домой
+    jobs: Вакансии
+    resumes: Резюме
+    actions: Действия
+    add_job: Добавить вакансию
+    add_resume: Добавить резюме
+    add_category: Добавить категорию
+    languages: Языки
+
+title:
+    home: Добро пожаловать | WorkIS
+    jobs: Вакансии
+    resumes: Резюме
+    new_job: Новая вакансия
+    new_resume: Новое резюме
+    new_category: Новая категория
+    edit_job: Редактирование вакансии
+    edit_resume: Редактирование резюме
+    edit_category: Редактирование категории
+
+job:
+    summary: Краткое изложение
+    description: Описание вакансии
+    salary: Зарплата
+    company: Компания
+    city: Город
+    employment: Вид занятости
+    experience: Опыт работы
+    education: Образование
+    contact: Контактная информация
+    name: ФИО
+    phone: Телефон
+    created: Дата создания
+    new:
+        new_job: Создание новой вакансию
+        edit_job: Редактирование вакансии
+        title: Введите должность
+        company: Введите название компании
+        city: Введите город
+        salary: Введите зарплату ($)
+        employment: Выберите вид занятости
+        full_employment: Полная занятость
+        part_time: Неполная занятость
+        distant_work: Удаленная работа
+        education: Выберите образование
+        higher: Высшее
+        incomplete_higher: Неоконченное высшее
+        secondary_special: Среднее специальное
+        secondary: Среднее
+        experience: Введите опыт работы
+        category: Выберитие категорию
+        description: Введите описание
+        name: Введите свое ФИО
+        phone: Введите свой телефон
+
+resume:
+    summary: Краткое изложение
+    skills: Навыки
+    name: ФИО
+    city: Город
+    education: Образование
+    experience: Опыт работы
+    employment: Вид занятости
+    contact: Контактная информация
+    phone: Телефон
+    created: Дата создания
+    new:
+        new_resume: Создание нового резюме
+        edit_resume: Редактирование резюме
+        name: Введите свое ФИО
+        birthday: Введите свое День рождение
+        city: Введите свой город
+        job_title: Введите свою должность
+        category: Выберите категорию
+        education: Выберите образование
+        higher: Высшее
+        incomplete_higher: Неоконченное высшее
+        secondary_special: Среднее специальное
+        secondary: Среднее
+        experience: Введите свой опыт работы
+        employment: Выберите вид занятости
+        full_employment: Полная занятость
+        part_time: Неполная занятость
+        distant_work: Удаленная работа
+        skills: Опишите свои навыки
+        email: Введиет свой Email
+        phone: Введите свой телефон
+
+category:
+    new_category: Создание новой категории
+    edit_category: Редактирование категории
+    title: Введите название категории
+    jobs: Вакансии
+    resumes: Резюме
+
+button:
+    save: Сохранить
+    view_details: Подробнее
+
+jumbotron:
+    title: Добро пожаловать!
+    description: Этот сайт поможет вам найти работу, которая подходит именно для вас. Используйте наши ресурсы для создания резюме и поиска соответствующих возможностей для трудоустройства в вашем региое.
+
+Full employment: Полная занятость
+Part-time: Неполная занятость
+Distant work: Удаленная работа
+Higher: Высшее
+Incomplete higher: Неоконченное высшее
+Secondary special: Среднее специальное
+Secondary: Среднее
