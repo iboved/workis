@@ -198,4 +198,9 @@ class Category
     {
         return $this->deletedAt;
     }
+
+    public function __toString()
+    {
+        return $this->title;
+    }
 }
