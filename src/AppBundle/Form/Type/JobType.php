@@ -17,9 +17,16 @@ class JobType extends AbstractType
             ->add('salary')
             ->add('employment', 'choice', [
                 'choices' => [
-                    'full employment' => 'Full employment',
-                    'part-time' => 'Part-time',
-                    'distant work' => 'Distant work']
+                    'Full employment' => 'Full employment',
+                    'Part-time' => 'Part-time',
+                    'Distant work' => 'Distant work']
+            ])
+            ->add('education', 'choice', [
+                'choices' => [
+                    'Higher' => 'Higher',
+                    'Incomplete higher' => 'Incomplete higher',
+                    'Secondary special' => 'Secondary special',
+                    'Secondary' => 'Secondary']
             ])
             ->add('experience')
             ->add('category', 'entity', [

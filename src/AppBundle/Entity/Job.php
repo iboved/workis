@@ -41,6 +41,7 @@ class Job
     /**
      * @ORM\Column(name="salary", type="integer")
      * @Assert\NotBlank()
+     * @Assert\GreaterThanOrEqual(value = 0)
      */
     private $salary;
 
@@ -53,8 +54,15 @@ class Job
     /**
      * @ORM\Column(name="experience", type="integer")
      * @Assert\NotBlank()
+     * @Assert\GreaterThanOrEqual(value = 0)
      */
     private $experience;
+
+    /**
+     * @ORM\Column(name="education", type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    private $education;
 
     /**
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="jobs", cascade={"persist"})
@@ -70,11 +78,13 @@ class Job
 
     /**
      * @ORM\Column(name="name", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $name;
 
     /**
      * @ORM\Column(name="phone", type="string", length=255)
+     * @Assert\NotBlank()
      */
     private $phone;
 
@@ -402,5 +412,28 @@ class Job
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Set education
+     *
+     * @param string $education
+     * @return Job
+     */
+    public function setEducation($education)
+    {
+        $this->education = $education;
+
+        return $this;
+    }
+
+    /**
+     * Get education
+     *
+     * @return string 
+     */
+    public function getEducation()
+    {
+        return $this->education;
     }
 }
