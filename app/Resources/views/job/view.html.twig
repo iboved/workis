@@ -16,20 +16,15 @@
                 <div class="panel-body">
                     <div class="col-xs-6 col-lg-6">
                         <div class="panel panel-default">
-                            {#<div class="panel-heading">#}
-                                {#<p class="panel-title" style="font-size: large; text-align: center">Summary</p>#}
-                            {#</div>#}
-
-                            {#<div class="alert alert-info" role="alert" style="text-align: center; font-size: large">Summary</div>#}
                             <div class="panel-body">
                                 <p style="font-size: 20px; text-align: center">{{ 'job.summary'|trans }}</p>
                                 <hr>
                                 <p style="font-size: 17px">{{ 'job.salary'|trans }}: {{ job.salary|salary }}</p>
                                 <p style="font-size: 17px">{{ 'job.company'|trans }}: {{ job.company }}</p>
                                 <p style="font-size: 17px">{{ 'job.city'|trans }}: {{ job.city }}</p>
-                                <p style="font-size: 17px">{{ 'job.employment'|trans }}: {{ job.employment }}</p>
+                                <p style="font-size: 17px">{{ 'job.employment'|trans }}: {{ job.employment|trans }}</p>
                                 <p style="font-size: 17px">{{ 'job.experience'|trans }}: {{ job.experience }}</p>
-                                <p style="font-size: 17px">{{ 'job.education'|trans }}: {{ job.education }}</p>
+                                <p style="font-size: 17px">{{ 'job.education'|trans }}: {{ job.education|trans }}</p>
                                 <hr>
                                 <table class="table table-hover">
                                     <caption>{{ 'job.contact'|trans }}</caption>
@@ -51,9 +46,6 @@
                     </div><!--/.col-xs-6 col-lg-6-->
                     <div class="col-xs-6 col-lg-6">
                         <div class="panel panel-default">
-                            {#<div class="panel-heading">#}
-                                {#<p class="panel-title" style="font-size: large; text-align: center">Job description</p>#}
-                            {#</div>#}
                             <div class="panel-body">
                                 <p style="font-size: 20px; text-align: center">{{ 'job.description'|trans }}</p>
                                 <hr>
