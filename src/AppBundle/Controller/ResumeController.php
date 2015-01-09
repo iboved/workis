@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Resume;
+use AppBundle\Form\Type\ResumeType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,6 +32,28 @@ class ResumeController extends Controller
         }
 
         return $this->render('resume/list.html.twig', ['resumes' => $resumes]);
+    }
+
+    /**
+     * @Route("/resumes/new")
+     * @Method({"GET","POST"})
+     */
+    public function newAction(Request $request)
+    {
+        $resume = new Resume();
+
+        $form = $this->createForm(new ResumeType(), $resume);
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $this->getDoctrine()->getManager()->persist($resume);
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirect($this->generateUrl('app_default_index'));
+        }
+
+        return $this->render('resume/new.html.twig', ['form' =>  $form->createView()]);
     }
 
     /**
