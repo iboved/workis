@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+    {% block stylesheets %}
+        {{ parent() }}
+        <style>
+            .row DIV .col-xs-6:hover {
+                background-color: #f5f5f5;
+            }
+        </style>
+    {% endblock %}
+{% block container %}
+    <div class="col-xs-12 col-sm-12">
+        <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+        <div class="row">
+            {% for resume in resumes %}
+                <div class="col-xs-6 col-lg-6">
+                    <div class="pull-right" style="font-size: 19px"><a href="{{ path('app_resume_list') }}?city={{ resume.city|lower }}">{{ resume.city }}</a></div>
+                    <p class="text-primary" style="font-size: 27px"><a href="{{ path('app_resume_view', {'id' : resume.id}) }}">{{ resume.jobTitle }}</a></p>
+                    <p>Created: {{ resume.createdAt|date }} | Education: {{ resume.education }}</p>
+                    <p>{{ resume.employment }} | Experience: {{ resume.experience }}</p>
+                    <p class="text-muted">{{ resume.skills|slice(0, 350) }}</p>
+                    <p><a class="btn btn-primary" href="{{ path('app_resume_view', {'id' : resume.id}) }}" role="button">View details &raquo;</a></p>
+                </div><!--/.col-xs-6.col-lg-6-->
+            {% endfor %}
+        </div><!--/row-->
+    </div><!--/.col-xs-12.col-sm-12-->
+{% endblock %}
