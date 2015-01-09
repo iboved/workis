@@ -15,6 +15,9 @@ title:
     new_job: New job
     new_resume: New resume
     new_category: New category
+    edit_job: Edit job
+    edit_resume: Edit resume
+    edit_category: Edit category
 
 job:
     summary: Summary
@@ -69,7 +72,7 @@ resume:
         birthday: Enter your birthday
         city: Enter your city
         job_title: Enter the job title
-        category: Choose the category of job
+        category: Choose the category of resume
         education: Choose the education
         higher: Higher
         incomplete_higher: Incomplete higher
@@ -97,4 +100,12 @@ button:
 
 jumbotron:
     title: Welcome!
-    description: This service helps you find the job that's right for you. Use our resources to create resume, search relevant employment opportunities in your area and launch your career.
+    description: This site helps you find the job that's right for you. Use our resources to create resume, search relevant employment opportunities in your area and launch your career.
+
+Full employment: Full employment
+Part-time: Part-time
+Distant work: Distant work
+Higher: Higher
+Incomplete higher: Incomplete higher
+Secondary special: Secondary special
+Secondary: Secondary
