@@ -11,32 +11,35 @@ class JobType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title')
-            ->add('company')
-            ->add('city')
-            ->add('salary')
+            ->add('title', null, ['label' => 'job.new.title'])
+            ->add('company', null, ['label' => 'job.new.company'])
+            ->add('city', null, ['label' => 'job.new.city'])
+            ->add('salary', null, ['label' => 'job.new.salary'])
             ->add('employment', 'choice', [
                 'choices' => [
-                    'Full employment' => 'Full employment',
-                    'Part-time' => 'Part-time',
-                    'Distant work' => 'Distant work']
+                    'Full employment' => 'job.new.full_employment',
+                    'Part-time' => 'job.new.part_time',
+                    'Distant work' => 'job.new.distant_work'],
+                'label' => 'job.new.employment'
             ])
             ->add('education', 'choice', [
                 'choices' => [
-                    'Higher' => 'Higher',
-                    'Incomplete higher' => 'Incomplete higher',
-                    'Secondary special' => 'Secondary special',
-                    'Secondary' => 'Secondary']
+                    'Higher' => 'job.new.higher',
+                    'Incomplete higher' => 'job.new.incomplete_higher',
+                    'Secondary special' => 'job.new.secondary_special',
+                    'Secondary' => 'job.new.secondary'],
+                'label' => 'job.new.education'
             ])
-            ->add('experience')
+            ->add('experience', null, ['label' => 'job.new.experience'])
             ->add('category', 'entity', [
                 'class' => 'AppBundle:Category',
-                'multiple' => false
+                'multiple' => false,
+                'label' => 'job.new.category'
             ])
-            ->add('description')
-            ->add('name')
-            ->add('phone')
-            ->add('save', 'submit');
+            ->add('description', null, ['label' => 'job.new.description'])
+            ->add('name', null, ['label' => 'job.new.name'])
+            ->add('phone', null, ['label' => 'job.new.phone'])
+            ->add('save', 'submit', ['label' => 'button.save']);
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
