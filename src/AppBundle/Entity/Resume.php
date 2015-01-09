@@ -59,6 +59,7 @@ class Resume
     /**
      * @ORM\Column(name="experience", type="integer")
      * @Assert\NotBlank()
+     * @Assert\GreaterThanOrEqual(value = 0)
      */
     private $experience;
 
