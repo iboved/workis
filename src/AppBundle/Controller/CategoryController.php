@@ -69,13 +69,12 @@ class CategoryController extends Controller
      * This method render jobs and resumes with a certain category
      *
      * @param Category $category
-     * @param $slug
      * @return \Symfony\Component\HttpFoundation\Response
      *
      * @Route("categories/{slug}")
      * @Method({"GET"})
      */
-    public function listAction(Category $category, $slug)
+    public function listAction(Category $category)
     {
         $jobs = $this->getDoctrine()->getRepository('AppBundle:Job')->findByCategory($category->getId());
         $resumes = $this->getDoctrine()->getRepository('AppBundle:Resume')->findByCategory($category->getId());
